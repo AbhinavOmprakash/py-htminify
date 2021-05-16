@@ -27,7 +27,8 @@ With poetry
 
 Usage
 -----
-*Django*
+*For Django*
+
 Just add it to the bottom of your middleware like this.
 
 .. code-block:: python
