@@ -9,6 +9,7 @@ with pip
 .. code-block:: bash
     $ pip install htminify
 
+    
 
 With pipenv
 
@@ -33,10 +34,10 @@ Just add it to the bottom of your middleware like this.
             'htminify.dj_middleware.StripWhitespaceMiddleware',
             ]
 
-            
+
 Additional settings
 
-By default the vinification only occurs when `DEBUG = False`. 
+By default the minification only occurs when `DEBUG = False`. 
 If you want to override this behavior and have minification during development.
 And `ALWAYS_MINIFY = True` to settings.py 
 
