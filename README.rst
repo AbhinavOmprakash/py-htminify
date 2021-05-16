@@ -27,7 +27,7 @@ Usage
 *Django*
 Just add it to the bottom of your middleware like this.
 
-.. code-block:: Python
+.. code-block:: python
     MIDDLEWARE = [
             #... all your other middleware
             'htminify.dj_middleware.StripWhitespaceMiddleware',
@@ -40,7 +40,7 @@ By default the vinification only occurs when `DEBUG = False`.
 If you want to override this behavior and have minification during development.
 And `ALWAYS_MINIFY = True` to settings.py 
 
-.. code-block:: Python
+.. code-block:: python
     # settings.py
     ALWAYS_MINIFY = True
 
