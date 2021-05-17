@@ -1,6 +1,4 @@
 import re
-from collections import namedtuple
-
 def minify(html: str) -> str:
     """A function that strips extra white space in an HTML string"""
 
