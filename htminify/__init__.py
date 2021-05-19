@@ -1,3 +1,3 @@
-from htminify import minify
+from .htminify import minify
 
 del htminify
