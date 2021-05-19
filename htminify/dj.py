@@ -3,6 +3,7 @@
 from htminify import minify
 from django.conf import settings
 
+
 class StripWhitespaceMiddleware(object):
     """
     Middleware class that minifies HTML.
@@ -24,6 +25,7 @@ class StripWhitespaceMiddleware(object):
     If you want to minify HTML when debug is true, add this to your settings
     ``ALWAYS_MINIFY = True``
     """
+
     def __init__(self, get_response=None):
         self.get_response = get_response
 
@@ -32,7 +34,7 @@ class StripWhitespaceMiddleware(object):
 
     def process_response(self, request, response):
         """Function called by django when processing a request."""
-        
+
         if self._should_minify():
             return self._minify(response)
         else:
@@ -47,13 +49,12 @@ class StripWhitespaceMiddleware(object):
         try:
             # ALWAYS_MINIFY won't exist if it isn't explicitly set.
             if settings.ALWAYS_MINIFY:
-                return True   
+                return True
             else:
                 return not settings.DEBUG
-                
+
         except AttributeError:
             return not settings.DEBUG
-
 
     def _minify(self, response):
         """
@@ -66,5 +67,5 @@ class StripWhitespaceMiddleware(object):
         # refer to https://docs.djangoproject.com/en/3.2/ref/unicode/
         html = response.content.decode("utf-8")
         response.content = minify(html).encode("utf-8")
-        print('calling minify')
+        print("calling minify")
         return response

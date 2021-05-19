@@ -140,3 +140,26 @@ dmypy.json
 # Cython debug symbols
 cython_debug/
 just
+source/ackerman_system.rst
+source/arr_sort.rst
+source/BDC.rst
+source/car.rst
+source/chaos.rst
+source/dutch_national_flag.rst
+source/language_survey.rst
+source/magic_square.rst
+source/modules.rst
+source/prime_factors.rst
+source/quickSort.rst
+source/scientificNotation.rst
+source/scrape.rst
+source/scratchPad.rst
+source/spam.rst
+source/survey.rst
+source/test_spam.rst
+source/test_survey.rst
+source/timeTillPeakDose.rst
+source/towers_of_hanoi.rst
+source/triangle.rst
+source/tutorial.rst
+source/vitruvianProportions.rst

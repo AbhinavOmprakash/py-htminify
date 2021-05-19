@@ -1,5 +1,6 @@
 import re
 
+
 def minify(html: str) -> str:
     """A function that strips extra white space in an HTML string"""
 
@@ -19,7 +20,8 @@ patterns = [
     # for e.g tab, space, new line
     (r"(?<=>)\s*(?=<)", ""),  # For matching space characters between HTML tags
     (r"<!--*(.*?)--*>", ""),  # for matching comments
-    (r"(?<=<)[\s\S]*?(?=>)",  #  For matching all text inside an HTML tag
+    (
+        r"(?<=<)[\s\S]*?(?=>)",  #  For matching all text inside an HTML tag
         _replace_space_inside_tag,
     ),
 ]

@@ -1,5 +1,3 @@
-
-
 from htminify import minify
 
 
@@ -36,6 +34,7 @@ def test_extra_newline_inside_html_tags_get_stripped():
 
     assert minified_html == minify(html)
 
+
 def test_extra_space_inside_html_tags_get_stripped():
     html = """<button class="navbar-toggler"      data-target="#navbarNav">"""
     minified_html = """<button class="navbar-toggler" data-target="#navbarNav">"""
@@ -50,8 +49,5 @@ def test_code_blocks_are_not_affected():
         print("Ha ha I am safe from the minifier")
 
     </code>"""
-    
+
     assert html == minify(html)
-
-
-    
