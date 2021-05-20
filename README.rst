@@ -41,7 +41,7 @@ The middleware goes in your ``wsgi.py`` file. An example ``wsgi.py`` will look l
 **For Flask**
 
 Flask provides access to its wsgi app, which you can pass as an argument to the middleware. 
-You are essentially wrapping the middleware around the wsgi application
+You are essentially wrapping the middleware around the wsgi application.
 An example flask file would be like this.
 
 .. code-block:: Python
