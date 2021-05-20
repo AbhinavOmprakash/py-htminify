@@ -1,7 +1,5 @@
 HTMinify
 ========
-.. image:: assets/coverage.svg
-
 A lightweight HTML minifier for *all* Python web frameworks.
 
 Installation
