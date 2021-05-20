@@ -38,6 +38,7 @@ def test_extra_newline_inside_html_tags_get_stripped():
 def test_extra_space_inside_html_tags_get_stripped():
     html = """<button class="navbar-toggler"      data-target="#navbarNav">"""
     minified_html = """<button class="navbar-toggler" data-target="#navbarNav">"""
+    
     assert minified_html == minify(html)
 
 
