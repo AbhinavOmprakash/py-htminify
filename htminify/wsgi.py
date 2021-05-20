@@ -8,35 +8,49 @@ class StripWhitespaceMiddleware(object):
         self.encoding = encoding
 
     def __call__(self, environ, start_response):
-        inner_status = None
-        inner_headers = []
-        inner_exc_info = None
+        responseInterceptor = ResponseInterceptor(self.app, environ, start_response)
+        html = responseInterceptor.get_response_content()
+        modified_html = self._modify_response_content(html)
+        
+        responseInterceptor.modify_content_headers(modified_html)
+        responseInterceptor.send_modified_response_headers()
+        return [modified_html]
 
-        def start_response_collector(status, headers, exc_info=None):
-            # Just collects the inner response headers, to be modified before sending to client
-            nonlocal inner_status, inner_headers, inner_exc_info
-            inner_status = status
-            inner_headers = headers
-            inner_exc_info = exc_info
-            # Not calling start_response(), as we will modify the headers first.
-            return None
-
-        # populates the inner_* vars, as triggers inner call of the collector closure
-        response_iter = self.app(environ, start_response_collector)
-
-        # removes the content-length, if exists
-        headers = [(k, v) for k, v in inner_headers if k.lower() != 'content-length']
-
-        html = b"".join(response_iter)
-        html = html.decode("utf-8")
+    def _modify_response_content(self, content):
+        content = b"".join(content)
+        content = content.decode(self.encoding)
+        modified_content = minify(content)
+        return modified_content.encode(self.encoding)
 
 
-        ### MANIPULATE YOUR `inner_body` HERE ###
-        # E.g. producing a final_body
-        final_body = minify(html)
+#TODO find a better name for class. move to another file?
+class ResponseInterceptor:
+    def __init__(self, app, environ, start_response):
+        self.app = app
+        self.environ = environ
+        self.start_response = start_response
 
-        headers.append(('Content-Length', str(len(final_body))))
+        self.captured_status = None
+        self.captured_exc_info = None
+        self.captured_headers = []
+        self.modified_headers = []
 
-        # Remember to send the modified headers!
-        start_response(inner_status, headers, inner_exc_info)   
-        return [final_body.encode("utf-8")]
+    def get_response_content(self):
+        """ Returns Iterable Byte string"""
+        return self.app(self.environ, self._capture_response_values)    
+
+    def _capture_response_values(self, status, headers, exc_info=None): 
+        # Just collects the inner response headers, 
+        #to be modified before sending to client
+        # Not calling start_response(), as we will modify the headers first.    
+        self.captured_status = status 
+        self.captured_headers = headers
+        self.captured_exc_info = exc_info
+        return None
+
+    def modify_content_headers(self, modified_content)->None:
+        self.modified_headers = [(k, v) for k, v in self.captured_headers if k.lower() != 'content-length']
+        self.modified_headers.append(('Content-Length', str(len(modified_content))))
+
+    def send_modified_response_headers(self):
+        self.start_response(self.captured_status, self.modified_headers, self.captured_exc_info)
