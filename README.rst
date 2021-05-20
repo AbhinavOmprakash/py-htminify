@@ -41,7 +41,7 @@ Just add it to the bottom of your middleware like this.
             
 Additional settings
 
-By default the vinification only occurs when `DEBUG = False`. 
+By default the vinification only occurs when ``DEBUG = False``. 
 If you want to override this behavior and have minification during development,
 Add ``ALWAYS_MINIFY = True`` to settings.py.
 
