@@ -10,7 +10,6 @@ With pip
 
     $ pip install htminify
 
-
 With poetry
 
 .. code-block:: bash
@@ -20,6 +19,7 @@ With poetry
 
 Usage
 -----
+
 **For Django**
 
 The middleware goes in your ``wsgi.py`` file. An example ``wsgi.py`` will look like this.
@@ -64,6 +64,7 @@ An example flask file would be like this.
 Note that we are wrapping the ``app.wsgi_app`` object and not the ``app`` object.
 
 **For any other wsgi framework**
+
 
 A similar procedure can be followed to integrate the middleware with other wsgi-Python web frameworks.
 Just wrap the middleware around the wsgi app.
