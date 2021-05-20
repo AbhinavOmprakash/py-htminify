@@ -1,7 +1,6 @@
 HTMinify
 ========
-.. class:: center
-    A lightweight HTML minifier for *all* Python web frameworks.
+That's just fine I guessA lightweight HTML minifier for *all* Python web frameworks.
 
 Installation
 ------------
