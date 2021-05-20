@@ -98,5 +98,20 @@ Pass the encoding-type to the middleware when wrapping the app.
     wsgi_app = StripWhitespaceMiddleware(wsgi_app, "UTF-16") # pass the encoding
 
 
+TODO
+-------------
+
+*Features*
+
+#. Minify Json content.
+#. Add ASGI support.
+
+*Documentation*
+
+* Generate Documentation and push to read the docs.
+* Add information for contributing.
 
 
+*Testing*
+
+* Improve test suite for wsgi middleware.
