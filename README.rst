@@ -1,10 +1,11 @@
 HTMinify
 ========
-A lightweight HTML minifier for Python web frameworks.
+.. class:: center
+    A lightweight HTML minifier for *all* Python web frameworks.
 
 Installation
 ------------
-with pip 
+With pip 
 
 .. code-block:: bash
 
