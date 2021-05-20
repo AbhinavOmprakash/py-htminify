@@ -63,7 +63,7 @@ An example flask file would be like this.
 
 Note that we are wrapping the ``app.wsgi_app`` object and not the ``app`` object.
 
-**other wsgi frameworks**
+**For any other wsgi framework**
 
 A similar procedure can be followed to integrate the middleware with other wsgi-Python web frameworks.
 Just wrap the middleware around the wsgi app.
@@ -89,7 +89,7 @@ You can do something like this
     if not debug:
         wsgi_app = StripWhitespaceMiddleware(wsgi_app) 
     
-*if you're not using ``UTF-8`` as your encoding*
+**If you're using encoding other than UTF-8**
 
 Pass the encoding-type to the middleware when wrapping the app.
 
@@ -103,7 +103,7 @@ Pass the encoding-type to the middleware when wrapping the app.
 TODO
 -------------
 
-*Features*
+*New Features*
 
 #. Minify Json content.
 #. Add ASGI support.
@@ -112,7 +112,6 @@ TODO
 
 * Generate Documentation and push to read the docs.
 * Add information for contributing.
-
 
 *Testing*
 
