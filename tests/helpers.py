@@ -1,4 +1,6 @@
 from unittest.mock import MagicMock
+
+
 class WsgiApp:
     def __init__(self, environ, start_response):
         self.environ = environ
