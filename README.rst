@@ -20,12 +20,12 @@ With poetry
 
 Usage
 -----
-*For Django*
+**For Django**
+
 The middleware goes in your ``wsgi.py`` file. An example ``wsgi.py`` will look like this.
 
 .. code-block:: Python
-    :emphasize-lines: 5,9
-    
+
     # wsgi.py
     import os
 
@@ -38,14 +38,14 @@ The middleware goes in your ``wsgi.py`` file. An example ``wsgi.py`` will look l
     
 
 
-*For Flask*
+**For Flask**
+
 Flask provides access to its wsgi app, which you can pass as an argument to the middleware. 
 You are essentially wrapping the middleware around the wsgi application
 An example flask file would be like this.
 
 .. code-block:: Python
 
-    :emphasize-lines: 5,9
     # app.py
     from flask import Flask
     from htminify.wsgi import StripWhitespaceMiddleware # add this!
@@ -63,7 +63,8 @@ An example flask file would be like this.
 
 Note that we are wrapping the ``app.wsgi_app`` object and not the ``app`` object.
 
-*other wsgi frameworks*
+**other wsgi frameworks**
+
 A similar procedure can be followed to integrate the middleware with other wsgi-Python web frameworks.
 Just wrap the middleware around the wsgi app.
 
@@ -78,7 +79,8 @@ Just wrap the middleware around the wsgi app.
 Configuration
 -------------
 
-*if you don't want to minify when debug is true*
+**if you don't want to minify when debug is true**
+
 You can do something like this
 
 .. code-block:: Python
