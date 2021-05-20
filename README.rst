@@ -24,8 +24,8 @@ Usage
 The middleware goes in your ``wsgi.py`` file. An example ``wsgi.py`` will look like this.
 
 .. code-block:: Python
-
     :emphasize-lines: 5,9
+    
     # wsgi.py
     import os
 
