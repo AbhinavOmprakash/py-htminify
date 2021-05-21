@@ -7,7 +7,7 @@ ________
 
 * Using a web framework, like django, flask, and pyramid? We got you covered.
 * Or you're feeling adventurous and you're building your own wsgi app? We got you covered there too. This will work with any program that complies with the WSGI specification
-* Using an encoding that is not UTF-8? Just pass an argument,and we'll take it from there. 😉   
+* Using an encoding that is not UTF-8? Just pass an argument, and we'll take it from there. 😉   
 * Mixing Javascript and html? We'll try to minify that too, without judging you too much. (No promises though😜).
 * No external dependencies.
 
@@ -72,7 +72,7 @@ An example flask file would be like this.
 
 Note that we are wrapping the ``app.wsgi_app`` object and not the ``app`` object.
 
-**For any other wsgi framework**
+**For any other WSGI app.**
 
 
 A similar procedure can be followed to integrate the middleware with other wsgi-Python web frameworks.
