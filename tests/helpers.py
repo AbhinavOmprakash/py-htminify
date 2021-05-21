@@ -12,7 +12,7 @@ class WsgiApp:
         self.original_html = "<html>           </html>".encode(encoding)
         self.minified_html = ["<html></html>".encode(encoding)]
 
-      def __iter__(self):
+    def __iter__(self):
         body = self.original_html
         yield body
 
