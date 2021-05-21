@@ -1,6 +1,6 @@
 HTMinify
 ========
-A lightweight HTML minifier for *all* Python web frameworks.
+A lightweight HTML minifier for *all* Python web frameworks and WSGI apps.
 
 Features
 ________
