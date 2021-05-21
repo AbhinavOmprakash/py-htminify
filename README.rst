@@ -2,6 +2,15 @@ HTMinify
 ========
 A lightweight HTML minifier for *all* Python web frameworks.
 
+Features
+________
+
+* Using a web framework, like django, flask, and pyramid? We got you covered.
+* Or you're feeling adventurous and you're building your own wsgi app? We got you covered there too. This will work with any program that complies with the WSGI specification
+* Using an encoding that is not UTF-8? Just pass an argument,and we'll take it from there. 😉   
+* Mixing Javascript and html? We'll try to minify that too, without judging you too much. (No promises though😜).
+* No external dependencies.
+
 Installation
 ------------
 With pip 
