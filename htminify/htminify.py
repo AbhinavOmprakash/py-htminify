@@ -9,11 +9,9 @@ def minify(html: str) -> str:
 
     return html
 
-
 def _replace_space_inside_tag(match):
     # for replacing extra space characters In matched text
     return re.sub(r"(\s\s+)", " ", match.group(0))
-
 
 patterns = [
     # Space characters refer to all characters denoted by r"\s"
@@ -23,5 +21,13 @@ patterns = [
     (
         r"(?<=<)[\s\S]*?(?=>)",  #  For matching all text inside an HTML tag
         _replace_space_inside_tag,
+    ),
+    (  # this will prevent matching code inside <code|pre> tags nested inside <p> tags
+        r"<\b(?!(code|pre|textarea)\b)\w+>[\s\S]*?<",  #  For matching text between tags
+        _replace_space_inside_tag,                     # like <p> asdfawdf</p> but not Inside<code> </code>
+    ),
+    (
+        r"</\w+>[\s\S]*?<",  #  For matching text between tags
+        _replace_space_inside_tag,  # like <p> asdfawdf<p> but not Inside<code> </code>
     ),
 ]
