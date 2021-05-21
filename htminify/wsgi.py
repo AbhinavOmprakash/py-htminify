@@ -12,13 +12,13 @@ class StripWhitespaceMiddleware(object):
         """Call during request/response cycle"""
         responseInterceptor = ResponseInterceptor(self.app, environ, start_response)
         html = responseInterceptor.get_response_content()
-        modified_html = self._modify_response_content(html)
+        modified_html = self._minify_response_content(html)
 
         responseInterceptor.modify_content_headers(modified_html)
         responseInterceptor.send_modified_response_headers()
         return [modified_html]
 
-    def _modify_response_content(self, content):
+    def _minify_response_content(self, content):
         """Converts the content to a string using appropriate encoding."""
         content = b"".join(content)
         content = content.decode(self.encoding)
