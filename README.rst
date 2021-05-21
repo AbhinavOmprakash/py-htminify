@@ -12,7 +12,7 @@ ________
 * No external dependencies.
 
 Installation
-------------
+____________
 With pip 
 
 .. code-block:: bash
@@ -27,7 +27,7 @@ With poetry
 
 
 Usage
------
+_____
 
 **For Django**
 
@@ -87,7 +87,7 @@ Just wrap the middleware around the wsgi app.
 
 
 Configuration
--------------
+_____________
 
 **if you don't want to minify when debug is true**
 
@@ -111,7 +111,7 @@ Pass the encoding-type to the middleware when wrapping the app.
 
 
 TODO
--------------
+____
 
 *New Features*
 
