@@ -78,23 +78,16 @@ def test_nested_code_blocks_are_protected():
         print("Ha ha I am safe from the minifier") </code>
     
     Some more random text</p>"""
-    minified_html = """<p>Some random text<code>def protected():
+    minified_html = """<p>Some random text <code>def protected():
         
-        print("Ha ha I am safe from the minifier") </code>Some more random text</p>"""
+        print("Ha ha I am safe from the minifier") </code> Some more random text</p>"""
     assert minified_html == minify(html)
 
 def test_regex_is_not_case_sensitive():
     html = """<P>Some random text
-    <CODE>def protected():
-        
-        print("Ha ha I am safe from the minifier")
-        print("blah blah") </CODE>
     
     Some more random text </P>"""
-    minified_html = """<P>Some random text<CODE>def protected():
-        
-        print("Ha ha I am safe from the minifier")
-        print("blah blah") </CODE>Some more random text </P>"""
+    minified_html = """<P>Some random text Some more random text </P>"""
     assert minified_html == minify(html)
 
 
