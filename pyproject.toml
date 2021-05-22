@@ -1,13 +1,16 @@
 [tool.poetry]
 name = "htminify"
-version = "0.1.0"
+version = "0.1.2"
 description = "A lightweight html minifier for all Python web frameworks and WSGI apps."
 authors = ["Abhinav Omprakash"]
-licence="BSD-3"
+license="BSD-3-Clause"
 readme="README.rst"
 homepage="https://github.com/AbhinavOmprakash/py-htminify"
 repository="https://github.com/AbhinavOmprakash/py-htminify"
 keywords=["html", "django","flask","wsgi", "middleware"]
+include=[
+    "LICENSE",
+]
 
 [tool.poetry.dependencies]
 python = "^3.6"
