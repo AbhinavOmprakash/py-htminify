@@ -2,7 +2,6 @@ HTMinify
 ========
 
       .. image:: https://codecov.io/gh/AbhinavOmprakash/py-htminify/branch/Production/graph/badge.svg?token=0POQLYOEY5
-      :target: https://codecov.io/gh/AbhinavOmprakash/py-htminify
     
 A lightweight HTML minifier for *all* Python web frameworks and WSGI apps.
 
