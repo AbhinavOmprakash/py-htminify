@@ -5,7 +5,8 @@ HTMinify
     
 A lightweight HTML minifier for *all* Python web frameworks and WSGI apps.
 
-**This project is still in BETA**
+**This project is still in BETA**  
+
 Features
 ________
 
